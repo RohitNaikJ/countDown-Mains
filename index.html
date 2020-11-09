@@ -90,13 +90,10 @@ body{
 
     <div class="days"> 
         <div id="days" class="numbers "> </div>days</div> 
-      <div class="hours"> 
-        <div  id="hours" class="numbers"> </div>hours</div> 
-      <div class="minutes"> 
-        <div  id="minutes" class="numbers"> </div>minutes</div> 
-      <div   class="seconds"> 
-        <div id="seconds" class="numbers"> </div>seconds</div> 
-      </div>
+      <div class="weeks"> 
+        <div  id="weeks" class="numbers"> </div>weeks</div> 
+      <div class="months"> 
+        <div  id="months" class="numbers"> </div>months</div> 
 
 </div>
 
@@ -117,15 +114,14 @@ let timer = setInterval(function() {
 
   // math
   let days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  let weeks = Math.floor(days/7);
+  let months = Math.floor(days/30);
   let seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
   // display
   document.getElementById("days").innerHTML=days
-  document.getElementById("hours").innerHTML=hours
-  document.getElementById("minutes").innerHTML=minutes
-  document.getElementById("seconds").innerHTML=seconds
+  document.getElementById("weeks").innerHTML=weeks
+  document.getElementById("months").innerHTML=months
 
 
 
